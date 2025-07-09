@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gradient Calculator</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #2b5876, #4e4376);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .calculator {
+      width: 320px;
+      background: #1f1f2e;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .display {
+      background: #1f1f2e;
+      color: #f2f2f2;
+      font-size: 48px;
+      text-align: right;
+      padding: 20px;
+      min-height: 80px;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+    }
+
+    button {
+      font-size: 24px;
+      padding: 20px;
+      border: none;
+      outline: none;
+      color: white;
+      background: #2c2c3a;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #3d3d51;
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    .btn-orange {
+      background: linear-gradient(135deg, #f27121, #e94057);
+      color: white;
+    }
+
+    .btn-orange:hover {
+      background: linear-gradient(135deg, #fa7c34, #ed5b6f);
+    }
+
+    .btn-gray {
+      background: #b0b0b0;
+      color: #222;
+    }
+
+    .btn-zero {
+      grid-column: span 2;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <div class="display" id="display">0</div>
+    <div class="buttons">
+      <button class="btn-gray" onclick="clearDisplay()">AC</button>
+      <button class="btn-gray" onclick="toggleSign()">±</button>
+      <button class="btn-gray" onclick="append('%')">%</button>
+      <button class="btn-orange" onclick="append('/')">÷</button>
+
+      <button onclick="append('7')">7</button>
+      <button onclick="append('8')">8</button>
+      <button onclick="append('9')">9</button>
+      <button class="btn-orange" onclick="append('*')">×</button>
+
+      <button onclick="append('4')">4</button>
+      <button onclick="append('5')">5</button>
+      <button onclick="append('6')">6</button>
+      <button class="btn-orange" onclick="append('-')">−</button>
+
+      <button onclick="append('1')">1</button>
+      <button onclick="append('2')">2</button>
+      <button onclick="append('3')">3</button>
+      <button class="btn-orange" onclick="append('+')">+</button>
+
+      <button class="btn-zero" onclick="append('0')">0</button>
+      <button onclick="append('.')">.</button>
+      <button class="btn-orange" onclick="calculate()">=</button>
+    </div>
+  </div>
+
+  <script>
+    let display = document.getElementById('display');
+    let expression = '';
+
+    function append(value) {
+      if (display.innerHTML === '0' && value !== '.') {
+        expression = value;
+      } else {
+        expression = expression.concat(value);
+      }
+      display.innerHTML = expression;
+    }
+
+    function clearDisplay() {
+      expression = '';
+      display.innerHTML = '0';
+    }
+
+    function toggleSign() {
+      if (expression !== '') {
+        if (expression.charAt(0) === '-') {
+          expression = expression.substring(1);
+        } else {
+          expression = '-' + expression;
+        }
+        display.innerHTML = expression;
+      }
+    }
+
+    function calculate() {
+      try {
+        let result = eval(expression.replace('%', '/100'));
+        display.innerHTML = result;
+        expression = result.toString();
+      } catch {
+        display.innerHTML = 'Error';
+        expression = '';
+      }
+    }
+  </script>
+</body>
+</html>

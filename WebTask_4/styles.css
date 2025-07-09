@@ -1,0 +1,79 @@
+/* Resetting margin & padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full Page Layout */
+html, body {
+    height: 100%;
+    background-color: grey; /* Background color for the body */
+    text-align: center;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styling (Fixed at the Top) */
+.header {
+    background-color: teal;
+    color: white;
+    padding: 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: 2px solid black;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Main Content Wrapper */
+.content {
+    flex: 1; /* Pushes the footer to the bottom */
+    margin-top: 80px; /* Space below the fixed header */
+    margin-bottom: 80px; /* Space above the fixed footer */
+    padding: 20px;
+}
+
+/* Paragraph Box Styling */
+p {
+    background-color: white;
+    padding: 20px;
+    width: 70%; /* Increased width */
+    margin: 20px auto; /* Centering the text boxes */
+    border: 2px solid black;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Text Color for P1 and P3 */
+.green {
+    color: green;
+}
+
+/* Text Color for P2 and P4 */
+.red {
+    color: red;
+}
+
+/* Footer Styling (PERMANENTLY FIXED AT THE BOTTOM) */
+/* Footer Styling (PERMANENTLY FIXED AT THE BOTTOM) */
+.footer {
+    background-color: teal;
+    color: white;
+    padding: 25px;
+    width: 100%; /* Covers the entire screen width */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border-radius: 25px 25px 0 0; /* Rounded corners only at the top */
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    border-top: 2px solid black;
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2);
+}

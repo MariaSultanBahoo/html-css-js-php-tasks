@@ -1,0 +1,117 @@
+Got it! You want to **perform the actual testing and analysis on your Windows system** for the project **"Volatile Data Saving from Windows"** step-by-step. Here's a clear, practical guide to do it yourself:
+
+---
+
+# How to Perform Your Volatile Memory Login Credential Analysis on Windows
+
+---
+
+## Step 1: Set Up Your Environment
+
+### What you need:
+
+* A **Windows 10 (or later)** machine.
+* **FTK Imager Lite** installed (to capture RAM dumps).
+* **Volatility 3** installed and configured (to analyze memory dumps).
+* **Sysinternals Strings** tool (to extract strings from memory dumps).
+* Your **custom C# login form app** ready to run or any simple login form.
+
+---
+
+## Step 2: Capture RAM After Login
+
+1. **Run your login application** (the custom C# WinForms login).
+2. Enter test credentials (e.g., username: `admin`, password: `password123`) and login.
+3. Wait about 10 seconds after successful login to allow the app to store credentials in memory.
+4. Launch **FTK Imager Lite**:
+
+   * Go to **File > Capture Memory**.
+   * Choose a destination folder.
+   * Start the capture and wait for it to complete (this creates a `.mem` file — a RAM snapshot).
+
+---
+
+## Step 3: Extract Strings from the Memory Dump
+
+1. Open **Command Prompt** (or PowerShell).
+
+2. Navigate to the folder where the `.mem` file is saved.
+
+3. Run the **Strings** tool to pull readable text from the memory:
+
+   ```bash
+   strings.exe memory_dump.mem > strings_output.txt
+   ```
+
+4. Open `strings_output.txt` with any text editor and **search for your test credentials**, e.g., `password123`.
+
+---
+
+## Step 4: Analyze Memory Dump with Volatility 3
+
+1. Ensure **Python** is installed (Volatility 3 requires Python 3.6+).
+
+2. Open a terminal and navigate to your Volatility folder.
+
+3. Run Volatility to list running processes in the memory dump:
+
+   ```bash
+   volatility3 -f memory_dump.mem windows.pslist
+   ```
+
+4. Run Volatility to extract strings (filtered by processes):
+
+   ```bash
+   volatility3 -f memory_dump.mem windows.strings
+   ```
+
+5. Look through the output for your test credentials or related login data.
+
+---
+
+## Step 5: Implement the Protection Mechanism (PowerShell Script)
+
+Create a simple PowerShell script like this:
+
+```powershell
+# Stop the login app process forcibly
+Stop-Process -Name "loginapp" -Force
+
+# Clear standby memory list to free RAM and remove residual data
+Clear-MemoryStandbyList.exe
+```
+
+**Notes:**
+
+* Download and place **Clear-MemoryStandbyList.exe** (from Sysinternals) in your script folder or system path.
+* Replace `"loginapp"` with the actual process name of your login application.
+
+---
+
+## Step 6: Validate the Protection
+
+1. Run your login app and login with test credentials.
+2. Immediately run the PowerShell script to kill the process and clear memory.
+3. Dump memory again with FTK Imager.
+4. Repeat **Step 3** and **Step 4** analysis on this new dump.
+5. Confirm that the credentials are no longer found or are drastically reduced.
+
+---
+
+# Extra Tips
+
+* Run your PowerShell as **Administrator** to allow process killing and memory clearing.
+
+* You can check running processes and their names using Task Manager or:
+
+  ```powershell
+  Get-Process
+  ```
+
+* For automation, run PowerShell script immediately after logout or app close.
+
+* Remember to keep the system idle during dumps to avoid noise in analysis.
+
+---
+
+If you want, I can also help you write the exact PowerShell script or commands for each step! Just ask. Would you like that?

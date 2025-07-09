@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Glow Up Survey ✨</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Glow Up Survey</h2>
+    <form id="feedbackForm">
+      <label for="name">Name</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
+
+      <label for="product">Favorite Product</label>
+      <input type="text" id="product" required>
+
+      <label>Which of our products have you tried?</label>
+      <div class="checkbox-grid">
+        <label><input type="checkbox" name="tried" value="Mascara">Mascara</label>
+        <label><input type="checkbox" name="tried" value="Bronzer">Bronzer</label>
+        <label><input type="checkbox" name="tried" value="Highlighter">Highlighter</label>
+        <label><input type="checkbox" name="tried" value="Tint">Tint</label>
+        <label><input type="checkbox" name="tried" value="Foundation"> Foundation</label>
+        <label><input type="checkbox" name="tried" value="Eyeliner">Eyeliner</label>
+      </div>
+
+      <label for="rating">Rating</label>
+      <select id="rating" required>
+        <option value="">Choose...</option>
+        <option value="🌟🌟🌟🌟🌟">🌟🌟🌟🌟🌟</option>
+        <option value="🌟🌟🌟🌟">🌟🌟🌟🌟</option>
+        <option value="🌟🌟🌟">🌟🌟🌟</option>
+        <option value="🌟🌟">🌟🌟</option>
+        <option value="🌟">🌟</option>
+      </select>
+
+      <label for="feedback">Feedback</label>
+      <textarea id="feedback" rows="3" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div class="output" id="output" style="display: none;">
+      <h3>Thank you for your feedback! 💌</h3>
+      <p><strong>Name:</strong> <span id="outName"></span></p>
+      <p><strong>Email:</strong> <span id="outEmail"></span></p>
+      <p><strong>Favorite Product:</strong> <span id="outProduct"></span></p>
+      <p><strong>Products Tried:</strong> <span id="outTried"></span></p>
+      <p><strong>Rating:</strong> <span id="outRating"></span></p>
+      <p><strong>Your Feedback:</strong> <span id="outFeedback"></span></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

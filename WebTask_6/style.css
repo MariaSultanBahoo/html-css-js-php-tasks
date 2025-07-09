@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #fce4ec, #f8bbd0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .form-container {
+    background-color: #fff0f6;
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(194, 24, 91, 0.2);
+    width: 100%;
+    max-width: 500px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #c2185b;
+    margin-bottom: 25px;
+    font-size: 26px;
+  }
+  
+  label {
+    display: block;
+    margin: 12px 0 5px;
+    color: #880e4f;
+    font-weight: 600;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #f8bbd0;
+    border-radius: 10px;
+    background-color: #fff;
+    box-sizing: border-box;
+    font-size: 15px;
+    transition: 0.3s ease;
+  }
+  
+  input:focus,
+  textarea:focus,
+  select:focus {
+    border-color: #ec407a;
+    outline: none;
+    box-shadow: 0 0 5px #f48fb1;
+  }
+  
+  .checkbox-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .checkbox-grid label {
+    font-weight: 500;
+    color: #ad1457;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s ease;
+  }
+  
+  .checkbox-grid input[type="checkbox"] {
+    transform: scale(1.1);
+    accent-color: #f06292;
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #f06292;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #ec407a;
+  }
+  
+  .output {
+    margin-top: 30px;
+    background-color: #fce4ec;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(236, 64, 122, 0.1);
+    animation: fadeIn 0.8s ease-in-out;
+  }
+  
+  .output h3 {
+    color: #d81b60;
+    margin-bottom: 10px;
+  }
+  
+  .output p {
+    font-size: 15px;
+    color: #6a1b9a;
+    margin: 5px 0;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

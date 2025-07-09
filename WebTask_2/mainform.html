@@ -1,0 +1,68 @@
+<html>
+<head>
+    <title>Main Form</title>
+</head>
+<body>
+
+<table align="center" cellpadding="100"> 
+        <tr>
+            <td align="center">
+                <h1>Registration Form</h1>
+
+                <form>
+                    <table>
+                        <tr>
+                            <td align="right"><label><b>Gender:</label></td>
+                            <td>
+                                <input type="radio" id="male" name="gender" value="male">
+                                <label for="male">Male</label>
+                                <input type="radio" id="female" name="gender" value="female">
+                                <label for="female">Female</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right"><label for="country"><b>Country:</label></td>
+                            <td>
+                                <select id="country" name="country">
+                                    <option value="Pakistan">Pakistan</option>
+                                    <option value="Dubai">Dubai</option>
+                                    <option value="USA">USA</option>
+                                    <option value="Spain">Spain</option>
+                                    <option value="Palestine">Palestine</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="London">London</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right"><b>Skills:</td>
+                            <td>
+                                <input type="checkbox" id="C++" name="skills" value="C++">
+                                <label for="c++">C++</label>
+                                <input type="checkbox" id="webdev" name="skills" value="Web Development">
+                                <label for="webdev">Web Development</label>
+                                <br>
+                                <input type="checkbox" id="javascript" name="skills" value="JavaScript">
+                                <label for="javascript">JavaScript</label>
+                                <input type="checkbox" id="python" name="skills" value="Python">
+                                <label for="python">Python</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right"><label for="objective"><b>Objective:</label></td>
+                            <td><textarea id="objective" name="objective" rows="4" cols="30"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center">
+                                <button type="submit">Apply</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

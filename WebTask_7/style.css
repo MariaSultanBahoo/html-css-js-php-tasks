@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #ff80ab, #80deea); /* Bright pink to turquoise gradient */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.form-container {
+  background-color: #fff3e0; /* Light peach background */
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(255, 61, 127, 0.2);
+  width: 100%;
+  max-width: 500px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+h2 {
+  text-align: center;
+  color: #f50057; /* Vibrant pink */
+  margin-bottom: 25px;
+  font-size: 26px;
+}
+
+label {
+  display: block;
+  margin: 12px 0 5px;
+  color: #00bcd4; /* Bright turquoise */
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ffeb3b; /* Bright yellow border */
+  border-radius: 10px;
+  background-color: #fff;
+  box-sizing: border-box;
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #ff4081; /* Hot pink focus border */
+  outline: none;
+  box-shadow: 0 0 5px #ff80ab; /* Soft pink glow */
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 20px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.checkbox-grid label {
+  font-weight: 500;
+  color: #ff4081; /* Hot pink */
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s ease;
+}
+
+.checkbox-grid input[type="checkbox"] {
+  transform: scale(1.1);
+  accent-color: #ff80ab; /* Bright pink accent color */
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff4081; /* Hot pink */
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #f50057; /* Strong pink on hover */
+}
+
+.output {
+  margin-top: 30px;
+  background-color: #e1f5fe; /* Light blue background */
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 10px rgba(0, 188, 212, 0.1);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.output h3 {
+  color: #f50057; /* Vibrant pink heading */
+  margin-bottom: 10px;
+}
+
+.output p {
+  font-size: 15px;
+  color: #00bcd4; /* Bright turquoise text */
+  margin: 5px 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

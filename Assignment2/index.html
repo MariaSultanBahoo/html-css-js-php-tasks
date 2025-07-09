@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<head>
+    <title>Exploring Bootstrap with Box Model</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Apply box-sizing to all elements */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #eaf2f8;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header, .footer {
+            background-color: #1f618d;
+            color: white;
+        }
+
+        .header {
+            padding: 30px 20px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .footer {
+            padding: 20px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .content {
+            margin-top: 40px;
+        }
+
+        .card {
+            min-height: 250px;
+            transition: transform 0.2s ease;
+            border-radius: 10px;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+        }
+
+        .blue-border {
+            border: 4px solid #3498db;
+        }
+
+        .purple-border {
+            border: 4px solid #8e44ad;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">Exploring Bootstrap with Box Model</div>
+
+    <div class="container content">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card blue-border shadow p-3 h-100">
+                    <div class="card-body">
+                        <p class="card-text">As a passionate learner in AI and Cybersecurity, I’m constantly exploring how intelligent systems can detect and prevent evolving threats. The synergy between machine learning and security opens new possibilities for digital safety and risk management.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card purple-border shadow p-3 h-100">
+                    <div class="card-body">
+                        <p class="card-text">I enjoy building smart solutions that not only automate processes but also protect against vulnerabilities. From ethical hacking to anomaly detection, I’m fascinated by the proactive measures that AI-powered cybersecurity offers in today's digital era.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card blue-border shadow p-3 h-100">
+                    <div class="card-body">
+                        <p class="card-text">Combining critical thinking with advanced algorithms helps me address security challenges creatively. Whether it’s through data analysis or neural networks, I aim to develop resilient systems that adapt, learn, and defend against real-time threats.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card purple-border shadow p-3 h-100">
+                    <div class="card-body">
+                        <p class="card-text">With a growing interest in cyber defense strategies and AI ethics, I believe technology should be used responsibly. My goal is to contribute to a safer digital world by designing solutions that are intelligent, ethical, and effective.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <a href="#contact" class="btn btn-primary btn-lg">Get in Touch</a>
+        </div>
+    </div>
+
+    <div class="footer mt-5" id="contact">Contact Us 💻 | Email: maria@cyberai.com</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

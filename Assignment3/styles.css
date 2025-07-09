@@ -1,0 +1,98 @@
+/* Base styles */
+body {
+  font-family: 'Roboto Slab', serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(-45deg, #ffecd2, #fcb69f, #a1c4fd, #c2e9fb);
+  background-size: 400% 400%;
+  animation: gradientShift 20s ease infinite;
+  min-height: 100vh;
+  color: #333;
+}
+
+/* Gradient animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.status-bar {
+  background: linear-gradient(to right, #11998e, #38ef7d);
+  color: white;
+  padding: 12px;
+  font-size: 2rem;
+  text-align: center;
+  font-family: 'Courier New', monospace;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+}
+
+
+
+/* Main container */
+.calendar-container {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffffcc;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1.2s ease-in;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Calendar styling */
+#calendar table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+#calendar th {
+  background-color: #4a90e2;
+  color: white;
+  padding: 14px;
+  text-transform: uppercase;
+}
+
+#calendar td {
+  padding: 14px;
+  border: 1px solid #eee;
+  font-weight: 500;
+}
+
+/* Iframe styling */
+.history-frame {
+  width: 100%;
+  height: 220px;
+  border: none;
+  border-left: 5px solid #4a90e2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fefefe;
+}
+
+/* Button styling */
+.open-btn {
+  font-size: 1rem;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4caf50;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.open-btn:hover {
+  background-color: #388e3c;
+  transform: translateY(-2px);
+}
