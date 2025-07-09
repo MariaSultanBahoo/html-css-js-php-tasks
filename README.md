@@ -1,5 +1,5 @@
 
-# Web Development Course Tasks & Assignments
+# HTML-CSS-JS-PHP Tasks
 
 This repository contains all the practical tasks & assignments completed as part of my **Web Development** semester course. The coursework covers both front-end and back-end fundamentals using:
 
